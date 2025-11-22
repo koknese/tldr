@@ -9,7 +9,7 @@
 
 - Modify default ACL of a file for all users:
 
-`setfacl {{[-m|--modify]}} {{[-d|--default]}} u::rw {{path/to/file_or_directory}}`
+`setfacl {{[-d|--default]}} {{[-m|--modify]}} u::rw {{path/to/file_or_directory}}`
 
 - Remove ACL of a file for a user:
 
@@ -17,4 +17,4 @@
 
 - Remove all ACL entries of a file:
 
-`setfacl {{[-X|--remove-all]}} {{path/to/file_or_directory}}`
+`setfacl {{[-b|--remove-all]}} {{path/to/file_or_directory}}`

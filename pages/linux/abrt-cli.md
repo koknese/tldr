@@ -2,7 +2,7 @@
 
 > Automatic Bug Reporting Tool for Fedora-based systems.
 > Used to detect, analyze, and report application crashes.
-> More information: <https://abrt.readthedocs.io/>.
+> More information: <https://abrt.readthedocs.io/en/latest/usage.html>.
 
 - List detected problems:
 
@@ -26,4 +26,4 @@
 
 - Generate a report for debugging manually:
 
-`abrt-cli report --analyze {{problem_id}}`
+`abrt-cli report {{[-a|--analyze]}} {{problem_id}}`

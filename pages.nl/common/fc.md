@@ -1,7 +1,7 @@
 # fc
 
 > Open het meest recente commando voor bewerking en voer het uit.
-> Meer informatie: <https://manned.org/fc>.
+> Meer informatie: <https://www.gnu.org/software/bash/manual/bash.html#index-fc>.
 
 - Open het laatste commando in de standaard systeemeditor en voer het uit na het aanpassen:
 
@@ -9,7 +9,7 @@
 
 - Specificeer een editor om mee te openen:
 
-`fc -e {{'emacs'}}`
+`fc -e '{{emacs}}'`
 
 - Toon recente commando's uit de geschiedenis:
 

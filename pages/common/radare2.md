@@ -1,7 +1,7 @@
 # radare2
 
 > A set of reverse engineering tools.
-> More information: <https://www.radare.org/r/docs.html>.
+> More information: <https://book.rada.re/first_steps/commandline_flags.html>.
 
 - Open a file in write mode without parsing the file format headers:
 
@@ -17,11 +17,11 @@
 
 - Display help text for any command in the interactive CLI:
 
-`> {{radare2_command}}?`
+`{{radare2_command}}?`
 
 - Run a shell command from the interactive CLI:
 
-`> !{{shell_command}}`
+`!{{shell_command}}`
 
 - Dump raw bytes of current block to a file:
 

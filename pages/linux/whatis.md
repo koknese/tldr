@@ -1,6 +1,7 @@
 # whatis
 
 > Display one-line descriptions from manual pages.
+> See also: `whereis`, `which`, `type`.
 > More information: <https://manned.org/whatis>.
 
 - Display a description from a man page:
@@ -15,7 +16,7 @@
 
 `whatis --wildcard {{net*}}`
 
-- Search man page descriptions with a regular expression:
+- Search man page descriptions with a `regex`:
 
 `whatis --regex '{{wish[0-9]\.[0-9]}}'`
 

@@ -2,7 +2,7 @@
 
 > Compile C++ source files.
 > Part of GCC (GNU Compiler Collection).
-> More information: <https://gcc.gnu.org>.
+> More information: <https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html>.
 
 - Compile a source code file into an executable binary:
 
@@ -10,7 +10,7 @@
 
 - Activate output of all errors and warnings:
 
-`g++ {{path/to/source.cpp}} -Wall {{[-o|--output]}} {{output_executable}}`
+`g++ {{path/to/source.cpp}} -Wall {{[-o|--output]}} {{path/to/output_executable}}`
 
 - Show common warnings, debug symbols in output, and optimize without affecting debugging:
 

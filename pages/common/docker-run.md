@@ -13,7 +13,7 @@
 
 - Run command in a one-off container in interactive mode and pseudo-TTY:
 
-`docker run --rm {{[-i|--interactive]}} {{[-t|--tty]}} {{image}} {{command}}`
+`docker run --rm {{[-it|--interactive --tty]}} {{image}} {{command}}`
 
 - Run command in a new container with passed environment variables:
 
@@ -21,7 +21,7 @@
 
 - Run command in a new container with bind mounted volumes:
 
-`docker run {{[-v|--volume]}} {{/path/to/host_path}}:{{/path/to/container_path}} {{image}} {{command}}`
+`docker run {{[-v|--volume]}} /{{path/to/host_path}}:/{{path/to/container_path}} {{image}} {{command}}`
 
 - Run command in a new container with published ports:
 

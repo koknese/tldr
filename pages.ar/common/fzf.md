@@ -2,28 +2,28 @@
 
 > أداة بحث تقريبي (fuzzy) لسطر الأوامر.
 > مشابهة لـ `sk`.
-> لمزيد من التفاصيل: <https://github.com/junegunn/fzf>.
+> لمزيد من التفاصيل: <https://github.com/junegunn/fzf#usage>.
 
-- تشغيل `fzf` على جميع الملفات داخل مُجَلَّد معين:
+- تشغيل `fzf` على جميع الملفات داخل المجلد المحدد:
 
 `find {{path/to/directory}} -type f | fzf`
 
-- تشغيل `fzf` للبحث في العمليات الجارية في الخلفية:
+- تشغيل `fzf` للعمليات الجارية:
 
 `ps aux | fzf`
 
-- تحديد ملفات متعددة باستخدام `<Shift Tab>` وحفظها في ملف:
+- تحديد ملفات متعددة باستخدام `<Shift Tab>` وكتابتها إلى ملف:
 
-`find {{path/to/directory}} -type f | fzf --multi > {{path/to/file}}`
+`find {{path/to/directory}} -type f | fzf {{[-m|--multi]}} > {{path/to/file}}`
 
 - تشغيل `fzf` مع نص بحثي محدد:
 
-`fzf --query "{{query}}"`
+`fzf {{[-q|--query]}} "{{query}}"`
 
-- تشغيل `fzf` على الإدخالات التي تبدأ بـ "core" وتنتهي بـ "go" أو "rb" أو "py":
+- تشغيل `fzf` على إدخالات تبدأ بـ `core` وتنتهي بـ `go` أو `rb` أو `py`:
 
-`fzf --query "^core go$ | rb$ | py$"`
+`fzf {{[-q|--query]}} "^core go$ | rb$ | py$"`
 
-- تشغيل `fzf` على الإدخالات التي لا تطابق "pyc" وتطابق تمامًا "travis":
+- تشغيل `fzf` على إدخالات لا تطابق `pyc` وتحتوي على `travis`:
 
-`fzf --query "!pyc 'travis"`
+`fzf {{[-q|--query]}} '!pyc travis'`

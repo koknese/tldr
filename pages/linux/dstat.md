@@ -1,7 +1,8 @@
 # dstat
 
 > Versatile tool for generating system resource statistics.
-> More information: <http://dag.wieers.com/home-made/dstat>.
+> Note: dstat is deprecated and no longer maintained.
+> More information: <https://github.com/dstat-real/dstat>.
 
 - Display CPU, disk, net, paging and system statistics:
 
@@ -13,7 +14,7 @@
 
 - Display CPU and memory statistics only:
 
-`dstat --cpu --mem`
+`dstat {{[-c|--cpu]}} {{[-m|--mem]}}`
 
 - List all available dstat plugins:
 

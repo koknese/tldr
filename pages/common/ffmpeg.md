@@ -1,7 +1,8 @@
 # ffmpeg
 
 > Video conversion tool.
-> More information: <https://ffmpeg.org>.
+> See also: `gst-launch-1.0`.
+> More information: <https://ffmpeg.org/ffmpeg.html#Options>.
 
 - Extract the sound from a video and save it as MP3:
 

@@ -1,7 +1,7 @@
 # tqdm
 
 > Show progress over time of a command.
-> More information: <https://tqdm.github.io/>.
+> More information: <https://tqdm.github.io/docs/cli/>.
 
 - Show iterations per second and use `stdout` afterwards:
 
@@ -13,8 +13,8 @@
 
 - Create an archive out of a directory and use the file count of that directory to create a progress bar:
 
-`zip -r {{path/to/archive.zip}} {{path/to/directory}} | tqdm --total $(find {{path/to/directory}} | wc -l) --unit files --null`
+`zip {{[-r|--recurse-paths]}} {{path/to/archive.zip}} {{path/to/directory}} | tqdm --total $(find {{path/to/directory}} | wc {{[-l|--lines]}}) --unit files --null`
 
 - Create an archive with tar and create a progress bar (system agnostic, GNU tar uses `stdout` while BSD tar uses `stderr`):
 
-`tar vzcf {{path/to/archive.tar.gz}} {{path/to/directory}} 2>&1 | tqdm --total $(find {{path/to/directory}} | wc -l) --unit files --null`
+`tar vzcf {{path/to/archive.tar.gz}} {{path/to/directory}} 2>&1 | tqdm --total $(find {{path/to/directory}} | wc {{[-l|--lines]}}) --unit files --null`

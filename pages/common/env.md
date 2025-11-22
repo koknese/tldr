@@ -25,4 +25,8 @@
 
 - Set one or more variables and run a program:
 
-`env {{variable1}}={{value}} {{variable2}}={{value}} {{variable3}}={{value}} {{program}}`
+`env {{variable1=value variable2=value variable3=value ...}} {{program}}`
+
+- Run a program under a different name:
+
+`env {{[-a|--argv0]}} {{custom_name}} {{program}}`

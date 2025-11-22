@@ -2,19 +2,19 @@
 
 > Easily build KDE components from its source repositories.
 > Drop-in replacement for `kdesrc-build`.
-> More information: <https://kde-builder.kde.org/en/cmdline/cmdline-usage.html>.
+> More information: <https://kde-builder.kde.org/en/cmdline/supported-cmdline-params.html>.
 
 - Initialize `kde-builder`:
 
-`kde-builder --generate-config && kde-builder --install-distro-packages`
+`kde-builder --initial-setup`
 
-- Compile a KDE component and its dependencies from the source:
+- Compile a KDE component and its dependencies from the source (use `workspace` to compile Plasma desktop):
 
-`kde-builder {{component_name}}`
+`kde-builder {{component_name1 component_name2 ...}}`
 
 - Compile a component without updating its local code and without compiling its dependencies:
 
-`kde-builder {{[-S|--no-src]}} {{[-D|--no-include-dependencies]}} {{component_name}}`
+`kde-builder {{[-SD|--no-src --no-include-dependencies]}} {{component_name}}`
 
 - Refresh the build directories before compiling:
 
@@ -28,9 +28,9 @@
 
 `kde-builder --run {{executable_name}}`
 
-- Build all configured components:
+- Install login session:
 
-`kde-builder`
+`kde-builder --install-login-session-only`
 
 - Use system libraries in place of a component if it fails to build:
 

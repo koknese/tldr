@@ -4,13 +4,13 @@
 > Uses a ranking algorithm to navigate to the best match.
 > More information: <https://github.com/ajeetdsouza/zoxide>.
 
-- Go to the highest-ranked directory that contains "foo" in the name:
+- Go to the highest-ranked directory that contains `string` in the name:
 
-`zoxide query {{foo}}`
+`zoxide query string`
 
-- Go to the highest-ranked directory that contains "foo" and then "bar":
+- Go to the highest-ranked directory that contains `string1` and then `string2`:
 
-`zoxide query {{foo}} {{bar}}`
+`zoxide query string1 string2`
 
 - Start an interactive directory search (requires `fzf`):
 
@@ -24,6 +24,6 @@
 
 `zoxide remove {{path/to/directory}}`
 
-- Generate shell configuration for command aliases (`z`, `za`, `zi`, `zq`, `zr`):
+- Generate shell configuration for command aliases (`z`, `zi`):
 
-`zoxide init {{bash|fish|zsh}}`
+`zoxide init {{bash|elvish|fish|nushell|posix|powershell|tcsh|xonsh|zsh}}`

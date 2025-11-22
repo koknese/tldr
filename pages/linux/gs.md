@@ -1,9 +1,9 @@
 # gs
 
-> GhostScript is a PDF and PostScript interpreter.
+> GhostScript, a PDF and PostScript interpreter.
 > More information: <https://manned.org/gs>.
 
-- To view a file:
+- View a file:
 
 `gs -dQUIET -dBATCH {{file.pdf}}`
 

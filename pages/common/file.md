@@ -1,17 +1,18 @@
 # file
 
 > Determine file type.
+> See also: `stat`.
 > More information: <https://manned.org/file>.
 
-- Give a description of the type of the specified file. Works fine for files with no file extension:
+- Give a description of the type of the specified file:
 
 `file {{path/to/file}}`
 
 - Look inside a zipped file and determine the file type(s) inside:
 
-`file {{[-z|--uncompress]}} {{foo.zip}}`
+`file {{[-z|--uncompress]}} {{path/to/file.zip}}`
 
-- Allow file to work with special or device files:
+- Allow `file` to work with special or device files:
 
 `file {{[-s|--special-files]}} {{path/to/file}}`
 

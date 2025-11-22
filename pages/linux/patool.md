@@ -10,13 +10,13 @@
 
 - Create an archive:
 
-`patool create {{/path/to/archive}} {{/path/to/file1}} {{/path/to/file2}} {{/path/to/dir1/}} {{/path/to/dir2/}}`
+`patool create {{path/to/archive}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}`
 
 - List contents of an archive:
 
 `patool list {{path/to/archive}}`
 
-- Compare the contents of two archives and display the differences in the standard output:
+- Compare the contents of two archives and display the differences in `stdout`:
 
 `patool diff {{path/to/archive1}} {{path/to/archive2}}`
 

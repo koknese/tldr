@@ -2,7 +2,7 @@
 
 > مدير الحزم الخاص بلغة بايثون.
 > بعض الأوامر الفرعية مثل `install` لديها توثيق خاص بها.
-> لمزيد من التفاصيل: <https://pip.pypa.io>.
+> لمزيد من التفاصيل: <https://pip.pypa.io/en/stable/cli/pip/>.
 
 - تثبيت حزمة (راجع `pip install` لمزيد من خيارات التثبيت):
 
@@ -14,7 +14,7 @@
 
 - تحديث حزمة مثبتة:
 
-`pip install --upgrade {{package}}`
+`pip install {{[-U|--upgrade]}} {{package}}`
 
 - إزالة تثبيت حزمة:
 
@@ -30,4 +30,4 @@
 
 - تثبيت الحزم من ملف متطلبات:
 
-`pip install --requirement {{requirements.txt}}`
+`pip install {{[-r|--requirement]}} {{requirements.txt}}`

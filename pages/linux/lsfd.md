@@ -13,11 +13,11 @@
 
 - Check what program has a specific file open:
 
-`lsfd {{[-Q|--filter]}} "NAME == '{{/path/to/file}}'"`
+`lsfd {{[-Q|--filter]}} "NAME == '{{path/to/file}}'"`
 
 - List open IPv4 or IPv6 sockets:
 
-`lsfd -i{{4|6}}`
+`lsfd {{-i4|-i6}}`
 
 - Display help:
 

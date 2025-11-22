@@ -2,7 +2,7 @@
 
 > Voer een commando uit met doorgegeven argumenten van een ander commando, een bestand, etc.
 > De invoer wordt behandeld als een enkel tekstblok en gesplitst in afzonderlijke stukken op spaties, tabbladen, nieuwe regels en einde-van-bestand.
-> Meer informatie: <https://pubs.opengroup.org/onlinepubs/9699919799/utilities/xargs.html>.
+> Meer informatie: <https://www.gnu.org/software/findutils/manual/html_mono/find.html#Invoking-xargs>.
 
 - Voer een commando uit met de invoergegevens als argumenten:
 
@@ -27,3 +27,7 @@
 - Parallelle uitvoeringen van maximaal `max-procs` processen tegelijk; de standaard is 1. Als `max-procs` 0 is, zal xargs zoveel mogelijk processen tegelijk uitvoeren:
 
 `{{argumenten_bron}} | xargs {{[-P|--max-procs]}} {{max-procs}} {{commando}}`
+
+- Vraag de gebruiker om bevestiging voordat de opdracht wordt uitgevoerd (bevestig met `y` of `Y`):
+
+`{{argumenten_bron}} | xargs {{[-p|--interactive]}} {{commando}}`

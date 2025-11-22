@@ -1,7 +1,7 @@
 # more
 
 > Toon een bestand interactief, met de mogelijkheid om te scrollen en te zoeken.
-> Bekijk ook: `less`.
+> Zie ook: `less`.
 > Meer informatie: <https://manned.org/more>.
 
 - Open een bestand:
@@ -24,6 +24,6 @@
 
 `<q>`
 
-- Toon help over interactieve commando's:
+- Toon de help over interactieve commando's:
 
 `<h>`

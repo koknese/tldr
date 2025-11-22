@@ -1,7 +1,7 @@
 # mitmproxy
 
 > An interactive man-in-the-middle HTTP proxy.
-> See also: `mitmweb` and `mitmdump`.
+> See also: `mitmweb`, `mitmdump`.
 > More information: <https://docs.mitmproxy.org/stable/>.
 
 - Start `mitmproxy` with default settings (will listen on port `8080`):
@@ -27,3 +27,11 @@
 - Set the console layout:
 
 `mitmproxy --console-layout {{horizontal|single|vertical}}`
+
+- Save all proxied traffic to a file for later analysis:
+
+`mitmproxy {{[-w|--save-stream-file]}} {{path/to/dump.mitm}}`
+
+- Replay a previously saved HTTP flow file:
+
+`mitmproxy {{[-nr|--no-server --rfile]}} {{path/to/dump.mitm}}`

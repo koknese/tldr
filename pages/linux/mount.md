@@ -9,7 +9,7 @@
 
 - Mount a device to a directory:
 
-`mount {{[-t|--types]}} {{filesystem_type}} {{path/to/device_file}} {{path/to/target_directory}}`
+`mount {{path/to/device_file}} {{path/to/target_directory}}`
 
 - Create a specific directory if it does not exist and mount a device to it:
 
@@ -21,9 +21,9 @@
 
 - Mount a CD-ROM device (with the filetype ISO9660) to `/cdrom` (readonly):
 
-`mount {{[-t|--types]}} {{iso9660}} {{[-o|--options]}} ro {{/dev/cdrom}} {{/cdrom}}`
+`mount {{[-t|--types]}} iso9660 {{[-o|--options]}} ro {{/dev/cdrom}} /cdrom`
 
-- Mount all the filesystem defined in `/etc/fstab`:
+- Mount all the filesystems defined in `/etc/fstab`:
 
 `mount {{[-a|--all]}}`
 
@@ -33,4 +33,4 @@
 
 - Mount a directory to another directory:
 
-`mount {{[-B|--bind]}} {{path/to/old_dir}} {{path/to/new_dir}}`
+`mount {{[-B|--bind]}} {{path/to/old_directory}} {{path/to/new_directory}}`

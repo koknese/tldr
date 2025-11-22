@@ -2,7 +2,7 @@
 
 > Show/manipulate routing, devices, policy routing and tunnels.
 > Some subcommands such as `address` have their own usage documentation.
-> More information: <https://www.manned.org/ip.8>.
+> More information: <https://manned.org/ip.8>.
 
 - List interfaces with detailed info:
 
@@ -10,11 +10,11 @@
 
 - List interfaces with brief network layer info:
 
-`ip {{[-br a|-brief address]}}`
+`ip {{[-br|-brief]}} {{[a|address]}}`
 
 - List interfaces with brief link layer info:
 
-`ip {{[-br l|-brief link]}}`
+`ip {{[-br|-brief]}} {{[l|link]}}`
 
 - Display the routing table:
 
@@ -26,12 +26,12 @@
 
 - Make an interface up/down:
 
-`sudo ip {{[l|link]}} {{[s|set]}} {{interface}} {{up|down}}`
+`sudo ip {{[l|link]}} {{[s|set]}} {{ethX}} {{up|down}}`
 
 - Add/Delete an IP address to an interface:
 
-`sudo ip {{[a|address]}} {{add|delete}} {{ip}}/{{mask}} dev {{interface}}`
+`sudo ip {{[a|address]}} {{add|delete}} {{ip}}/{{mask}} dev {{ethX}}`
 
 - Add a default route:
 
-`sudo ip {{[r|route]}} {{[a|add]}} default via {{ip}} dev {{interface}}`
+`sudo ip {{[r|route]}} {{[a|add]}} default via {{ip}} dev {{ethX}}`

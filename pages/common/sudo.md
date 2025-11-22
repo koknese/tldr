@@ -1,6 +1,7 @@
 # sudo
 
-> Executes a single command as the superuser or another user.
+> Execute a single command as the superuser or another user.
+> See also: `pkexec`, `run0`, `doas`.
 > More information: <https://www.sudo.ws/sudo.html>.
 
 - Run a command as the superuser:
@@ -33,4 +34,4 @@
 
 - List the allowed (and forbidden) commands for the invoking user:
 
-`sudo {{[-l|--list]}}`
+`sudo {{[-ll|--list --list]}}`

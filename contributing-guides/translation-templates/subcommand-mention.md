@@ -64,7 +64,7 @@ Some subcommands such as `example command` have their own usage documentation.
 ### bn
 
 ```markdown
-কিছু উপ-কমান্ড যেমন `example command` স্বতন্ত্র ব্যবহার নির্দেশনা রয়েছে.
+কিছু উপ-কমান্ড যেমন `example command` স্বতন্ত্র ব্যবহার নির্দেশনা রয়েছে।
 ```
 
 ---
@@ -128,7 +128,7 @@ Algunos subcomandos, como `example command`, tienen su propia documentación de 
 ### fi
 
 ```markdown
-Joillakin alakomennoilla, kuten `example command`, on omat käyttöoppaansa.
+Joillakin alikomennoilla, kuten `example command`, on omat käyttöoppaansa.
 ```
 
 ---

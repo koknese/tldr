@@ -1,13 +1,13 @@
 # rnm
 
 > Bulk Rename Utility.
-> More information: <https://github.com/neurobin/rnm>.
+> More information: <https://github.com/neurobin/rnm#basic-options>.
 
 - Replace a search string with a replacement string in filenames:
 
 `rnm -ss {{old}} -rs {{new}} {{path/to/directory}}`
 
-- Use a fixed (literal) search and replace string instead of regex:
+- Use a fixed (literal) search and replace string instead of `regex`:
 
 `rnm -ssf {{old}} -rs {{new}} {{path/to/files}}`
 

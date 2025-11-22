@@ -1,6 +1,6 @@
 # lsblk
 
-> Lists information about devices.
+> List information about devices.
 > More information: <https://manned.org/lsblk>.
 
 - List all storage devices in a tree-like format:
@@ -33,4 +33,4 @@
 
 - Display a customized summary using a comma-separated list of columns:
 
-`lsblk {{[-o|--output]}} {{NAME,SERIAL,MODEL,TRAN,TYPE,SIZE,FSTYPE,MOUNTPOINT,...}}`
+`lsblk {{[-o|--output]}} {{NAME,ROTA,SERIAL,MODEL,TRAN,TYPE,SIZE,FSTYPE,MOUNTPOINT,...}}`

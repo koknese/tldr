@@ -2,6 +2,7 @@
 
 > Display file contents in octal, decimal or hexadecimal format.
 > Optionally display the byte offsets and/or printable representation for each line.
+> See also: `hexyl`, `xxd`, `hexdump`.
 > More information: <https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html>.
 
 - Display file using default settings: octal format, 8 bytes per line, byte offsets in octal, and duplicate lines replaced with `*`:
@@ -18,7 +19,7 @@
 
 - Display file in hexadecimal format (1-byte units), and 4 bytes per line:
 
-`od {{[-t|--format]}} {{x1}} {{[-w|--width=]}}{{4}} {{[-v|--output-duplicates]}} {{path/to/file}}`
+`od {{[-t|--format]}} {{x1}} {{[-w|--width=]}}4 {{[-v|--output-duplicates]}} {{path/to/file}}`
 
 - Display file in hexadecimal format along with its character representation, and do not print byte offsets:
 

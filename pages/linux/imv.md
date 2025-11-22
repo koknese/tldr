@@ -14,7 +14,7 @@
 
 - View images [r]ecursively from a path:
 
-`imv -r --slideshow {{path/to/path}}`
+`imv -r --slideshow {{path/to/directory}}`
 
 - Open multiple images via `stdin`:
 
@@ -26,4 +26,4 @@
 
 - View multiple images from the web:
 
-`curl -Osw '%{filename_effective}\n' '{{http://www.example.com/[1-10].jpg}}' | imv`
+`curl {{[-Osw|--remote-name --silent --write-out]}} '%{filename_effective}\n' '{{http://www.example.com/[1-10].jpg}}' | imv`

@@ -117,6 +117,8 @@ most [tldr pages clients](https://github.com/tldr-pages/tldr/wiki/Clients) will 
 In this case, the information of the Windows version of `cd` (stored in `pages/windows/cd.md`) will be displayed by default to Windows users, and a generic/common version (stored in `pages/common/cd.md`)
 will be displayed for Linux, macOS, and other platform users.
 
+Try to match the page filename with the invoked command. Do not use the project name if possible. The goal is to be as transparent as possible to the user when they are curious of a command.
+
 ### Aliases
 
 If a command can be called with alternative names (like `vim` can be called by `vi`), alias pages can be created to point the user to the original command name.
@@ -169,7 +171,7 @@ Command Prompt command's tldr description, for example:
 > The "View documentation of the equivalent PowerShell command" example is optional and must be excluded if the page already has the maximum number (8) of examples.
 
 2. **Provides a new alias but only executable in PowerShell**, such as `ni` for `New-Item`. In this case, use the [standard alias template](https://github.com/tldr-pages/tldr/blob/main/contributing-guides/translation-templates/alias-pages.md),
-but add the word "In Powershell," (or equivalent) to indicate that the command is exclusive to PowerShell. For example,
+but add the word "In PowerShell," (or equivalent) to indicate that the command is exclusive to PowerShell. For example,
 
 ```md
 # ni
@@ -313,6 +315,18 @@ Use backticks on the following:
 
 When describing keycaps or a keyboard shortcut for a utility, use the same [keypress syntax](#keypress-syntax) as in example commands. Make sure to enclose it in backticks so that it is not invisible in markdown renderers (i.e. ``Print the last lines of a given file and keep reading it until `<Ctrl c>`:``).
 
+If a program requires root privileges to run and doesn't provide its own prompt for a password, prepend the command with `sudo` (e.g. `sudo apt update`).
+
+Avoid explaining general UNIX concepts that could apply to any command (i.e. relative/absolute paths, glob patterns/wildcards, special character escaping, program return values, ...)
+
+### Standardized Terms
+
+Some terms are used repeatedly throughout pages, and as such, should be standardized. These include:
+
+| Term | Standard | Explanation |
+|---|---|---|
+| Regular expression | `` `regex` `` | `regex` defines a match pattern given a string of characters (https://en.wikipedia.org/wiki/Regular_expression). |
+
 ## Heading
 
 ### Program description
@@ -335,9 +349,10 @@ It should instead be simplified to make it easier for everyone to read:
 
 ### More information links
 
-- On the `More information` link line, we prefer linking to the author's provided documentation of the command-line reference or the man page. When not available, use <https://manned.org> as the default fallback for all platforms
+- On the `More information` link line, provide a direct link to documentation that instructs on how to use the command. We prefer linking to the author's provided documentation but when not available or very lacking in information, use <https://manned.org> as the default fallback for all platforms
 (except `osx` and BSD platforms other than FreeBSD).
-Alternatively, you can link to the author's website or a tutorial page if the command doesn't have a documentation page.
+If there is no documentation page to be found, you can link to the author's website or a third party tutorial.
+- Keep the more information link short. Cut out redundant text if possible. For example use https://manned.org/partclone instead of https://manned.org/man/partclone.8 unless there are two different manpages for a command across distributions/platforms i.e. `command.1` and `command.8`.
 
 - For `osx`: Apple distributes the built-in man pages [in Xcode](https://developer.apple.com/documentation/os/reading_unix_manual_pages).
 For commands documented there, we recommend using <https://keith.github.io/xcode-man-pages/>, an HTML export of all Apple's man pages bundled with Xcode.
@@ -388,6 +403,12 @@ the part of the address that starts with `?view=`.
 > See also: `date` for Unix information, `uname` for system information and `umount` for unmounting partitions.
 ```
 
+- When a command features subcommands, those pages can be referenced with the following line. Note that only the subcommand is named:
+
+```md
+> Some subcommands such as `commit`, `add`, `branch`, `switch`, `push`, etc. have their own usage documentation.
+```
+
 ## Example descriptions
 
 ### Short option mnemonics
@@ -416,20 +437,39 @@ For example, `[d]ownload` in English may be translated into `[d]escargar` in Spa
 - Optionally, mnemonics and their enclosed terms can be separated with brackets from the rest of the description (i.e. `([a]ll)`) in translations and specific pages to provide additional context or mention a word not present in the description.
 
 > [!NOTE]\
-> In cases where the character isn't present in the translated word, you can highlight the option next to the equivalent word or you can add the English work beside the translation inside a bracket.
+> In cases where the character isn't present in the translated word, you can highlight the option next to the equivalent word or you can add the English word beside the translation inside a bracket.
 > For example, `E[x]tract` in English may be translated into `ekstrak [x]` or `ekstrak (E[x]tract)` in Indonesian.
 
 ## Example commands
 
+### Argument order
+
+Try to keep the following order:
+
+- Program name
+- Input redirection from a file
+- All subcommands
+- Positional arguments/Packages/Data/...
+- Option flags
+- Options with arguments
+- Output redirection to a file
+
+For example: `systemctl < input_file.txt status pipewire --user > output_file.txt`
+
+This is only a suggestion and should be disregarded when program functionality or readability dictates otherwise. For example when a page is repeating arguments between commands try to align them vertically.
+
+If the command does multiple things, try to keep the chronological order in which things happen.
+
 ### Option syntax
 
 - For user-friendliness, prefer **GNU-style long options** (like `--help` rather than `-h`). Make sure that the options are cross-platform compatible (intended to work the same across multiple platforms) for pages in the `common` directory.
-- If a command only supports short options or the short option greatly differs from the long option, attempt to document what the letter is short for with a [mnemonic](#short-option-mnemonics).
 - For letting the client decide whether to show long or short options in commands, use an option placeholder i.e. `{{[-o|--output]}}`.
+- If a command only supports short options or the short option greatly differs from the long option, attempt to document what the letter is short for with a [mnemonic](#short-option-mnemonics).
 - Prefer grouping flag options together when the program supports it (i.e. `{{[-it|--interactive --tty]}}` instead of `{{[-i|--interactive]}} {{[-t|--tty]}}`).
 - Prefer not grouping options that take in arguments (i.e. `{{[-it|--interactive --tty]}} {{[-w|--workdir]}} {{path/to/directory}}` instead of `{{[-itw|--interactive --tty --workdir]}} {{path/to/directory}}`)
 - Prefer using a space instead of the equals sign (`=`) to separate options from their arguments (i.e. use `--opt arg` instead of `--opt=arg`), unless the program does not support it.
 - Likewise prefer separating shortform options from their arguments with a space (i.e. use `-o arg` instead of `-oarg`), unless the program does not support it.
+- If a command only supports `-oarg` and `--opt=arg` the option placeholder should be written like this `{{[-o|--opt=]}}arg`. Keep in mind how the command would look if a client were to display only short or only long options.
 
 ### Placeholder syntax
 
@@ -455,8 +495,8 @@ Keep the following guidelines in mind when choosing placeholders:
   except when the location is implicit.
 - When the path cannot be relative
   and has to start at the root of the filesystem,
-  prefix it with a slash,
-  such as `get {{/path/to/remote_file}}`.
+  prefix it with a slash outside the placeholder,
+  such as `get /{{path/to/remote_file}}`.
 - In case of a possible reference both to a file or a directory,
   use `{{path/to/file_or_directory}}`.
 
@@ -477,7 +517,7 @@ Keep the following guidelines in mind when choosing placeholders:
 
 - If a command can optionally take 1 or more arguments of the same kind, use an ellipsis: `{{placeholder1 placeholder2 ...}}`.
   For instance, if multiple paths are expected, use `{{path/to/directory1 path/to/directory2 ...}}`.
-- If only one of the multiple options is possible, write it as: `{{placeholder1|placeholder2|placeholder3}}`. If there are more than 4 possible values, you can use `|...` after the last item.
+- If only one of the multiple options is possible, write it as: `{{placeholder1|placeholder2|placeholder3}}`. If there are more than 3 possible values, you can use `|...` after the last item.
 - Use two dots to mark a range of possible values, for example `{{1..5}}` or `{{a..z}}`.
 
 #### Optional placeholders
@@ -485,6 +525,17 @@ Keep the following guidelines in mind when choosing placeholders:
 When documenting optional placeholders like paths or file extensions, it is suggested to specify them in the page or example descriptions instead of the placeholder itself. For example:
 
 - Use `{{path/to/source.ext}}` instead of `{{path/to/source.tar[.gz|.bz2|.xz]}}`.
+
+#### Exceptions
+
+- Do not put placeholders inside placeholders.
+- Do not use placeholders when the value is explicitly stated in the description of the command. For example:
+
+```md
+- Refresh the output every 2 seconds:
+
+`free {{[-s|--seconds]}} 2`
+```
 
 ### Keypress syntax
 
@@ -511,7 +562,7 @@ The below section contains additional language and translation-specific rules:
 
 ### General
 
-Do not translate `example.com`. The domain is reserved by IANA for documentation purposes and will not be leased to anyone. Translating the website name could put thoughtless users at risk.
+Do not translate `example.com`. The domain is [reserved by IANA for documentation purposes](https://www.iana.org/help/example-domains) and will not be leased to anyone. Translating the website name could put thoughtless users at risk.
 
 ### English-Specific Rules
 

@@ -5,11 +5,11 @@
 
 - Execute a specific expression only using the `jq` binary (print a colored and formatted JSON output):
 
-`jq '.' {{/path/to/file.json}}`
+`jq '.' {{path/to/file.json}}`
 
 - Execute a specific script:
 
-`{{cat path/to/file.json}} | jq --from-file {{path/to/script.jq}}`
+`{{cat path/to/file.json}} | jq {{[-f|--from-file]}} {{path/to/script.jq}}`
 
 - Pass specific arguments:
 

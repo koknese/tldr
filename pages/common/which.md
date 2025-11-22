@@ -1,6 +1,7 @@
 # which
 
 > Locate a program in the user's path.
+> See also: `whereis`, `whatis`, `type`.
 > More information: <https://manned.org/which>.
 
 - Search the PATH environment variable and display the location of any matching executables:
@@ -9,4 +10,4 @@
 
 - If there are multiple executables which match, display all:
 
-`which -a {{executable}}`
+`which {{[-a|--all]}} {{executable}}`

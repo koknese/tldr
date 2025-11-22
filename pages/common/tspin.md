@@ -7,13 +7,13 @@
 
 `tspin {{path/to/application.log}}`
 
-- Read from another command and print to stdout:
+- Read from another command and print to `stdout`:
 
-`journalctl -b --follow | tspin`
+`journalctl {{[-b|--boot]}} {{[-f|--follow]}} | tspin`
 
 - Read from file and print to `stdout`:
 
-`tspin {{path/to/application.log}} --print`
+`tspin {{path/to/application.log}} {{[-p|--print]}}`
 
 - Read from `stdin` and print to `stdout`:
 

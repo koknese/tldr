@@ -1,6 +1,6 @@
 # mail
 
-> The command operates on the user's mailbox if no argument is given.
+> Operate on the user's mailbox.
 > To send an email the message body is built from `stdin`.
 > More information: <https://manned.org/mail>.
 
@@ -14,7 +14,7 @@
 
 - Send an email that contains file content:
 
-`mail --subject "{{$HOSTNAME filename.txt}}" {{to_user@example.com}} < {{path/to/filename.txt}}`
+`mail < {{path/to/file.txt}} --subject "{{$HOSTNAME filename.txt}}" {{to_user@example.com}}`
 
 - Send a `tar.gz` file as an attachment:
 

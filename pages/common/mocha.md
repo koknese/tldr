@@ -9,11 +9,11 @@
 
 - Run tests contained at a specific location:
 
-`mocha {{directory/with/tests}}`
+`mocha {{path/to/test_directory}}`
 
 - Run tests that match a specific `grep` pattern:
 
-`mocha --grep {{regular_expression}}`
+`mocha --grep {{regex}}`
 
 - Run tests on changes to JavaScript files in the current directory and once initially:
 

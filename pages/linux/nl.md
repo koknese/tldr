@@ -9,13 +9,13 @@
 
 - Read from `stdin`:
 
-`{{command}} | nl -`
+`{{command}} | nl`
 
 - Number [a]ll body lines including blank lines or do [n]ot number body lines:
 
 `nl {{[-b|--body-numbering]}} {{a|n}} {{path/to/file}}`
 
-- Number only the body lines that match a basic regular expression (BRE) [p]attern:
+- Number only the body lines that match a basic `regex` (BRE) [p]attern:
 
 `nl {{[-b|--body-numbering]}} p'FooBar[0-9]' {{path/to/file}}`
 
